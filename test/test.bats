@@ -1,4 +1,6 @@
-load '../src/project.sh'
+setup() {
+  source ./src/project.sh
+}
 
 @test "can run our script" {
     run ./src/project.sh
@@ -9,3 +11,9 @@ load '../src/project.sh'
     run someFunction
     [ "$output" = "This is a function" ]
 }
+
+#@test "someOtherFunction" {
+##  source ./src/project.sh
+#  run 
+#  [ "$output" = "This is another function" ]
+#}
