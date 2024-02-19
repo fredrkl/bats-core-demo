@@ -7,6 +7,5 @@ load '../src/project.sh'
 
 @test "someFunction" {
     run someFunction
-#    run get_project_welcome_message
     [ "$output" = "This is a function" ]
 }
