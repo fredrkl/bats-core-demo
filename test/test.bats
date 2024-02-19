@@ -1,3 +1,4 @@
 @test "can run our script" {
-    ./src/project.sh
+    run ./src/project.sh
+    [ "$output" = "Welcome to our project!" ]
 }
