@@ -12,8 +12,9 @@ setup() {
     [ "$output" = "This is a function" ]
 }
 
-#@test "someOtherFunction" {
-##  source ./src/project.sh
-#  run 
-#  [ "$output" = "This is another function" ]
-#}
+@test "Array length test" {
+  run generate_array
+  IFS=' ' read -r -a array <<< "$output"
+  # Test the length of the array
+  [ "${#array[@]}" -eq 3 ]
+}
