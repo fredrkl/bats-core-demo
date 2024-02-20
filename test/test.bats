@@ -18,3 +18,13 @@ setup() {
   # Test the length of the array
   [ "${#array[@]}" -eq 3 ]
 }
+
+@test "Array content test" {
+  run generate_array
+  IFS=' ' read -r -a array <<< "$output"
+
+  # Test the content of the array
+  [ "${array[0]}" = "element1" ]
+  [ "${array[1]}" = "element2" ]
+  [ "${array[2]}" = "element3" ]
+}
