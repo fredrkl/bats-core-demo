@@ -28,3 +28,11 @@ setup() {
   [ "${array[1]}" = "element2" ]
   [ "${array[2]}" = "element3" ]
 }
+
+@test "Global variabel test" {
+  global_variable
+
+  # I should be able to access the array from the global scope
+
+  [ "$my_global_variable" = "Something" ]
+}
